@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.game-space {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    width: 700px;
+    height: 500px;
+    background-color: rgb(1, 150, 31);
+    border-radius: 20px 20px 300px 300px;
+    margin: 75px auto;
+    border: 6px ridge red;
+}
+
+.player {
+    margin-left: 15px;
+    display: flex;
+}
+
+.player-content{
+    color: black;
+    display: flex;
+    justify-content:flex-start;
+}
+
+.player-points {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.player-points {
+    color: black;
+    display: flex;
+    justify-content:flex-start;
+    margin-top: 5px;
+    height: 170px;
+    background: whitesmoke;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.player-points p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin-top: 55px;
+}
+
+.player_hand_points {
+    height: 25px;
+}
+
+.table {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.table-content{
+    color: black;
+    margin-top: 20px;
+}
+
+.table-points {
+    display: flex;
+    height: 170px;
+    width: 120px;
+    background-color:white;
+    border: 1px solid black;
+    border-radius: 7px;
+    flex-direction: column;
+}
+
+.table-points p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin-top: 55px;
+}
+
+.table-points h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.table_hand_points {
+    height: 30px;
+}
+
+.table-space {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(1, 150, 31);
+}
+
+h2 {
+    font-size: 20px;
+}

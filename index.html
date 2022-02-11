@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="favicon">
+    <title>Black-Jack</title>
+</head>
+
+<body>
+    <h1>Welcome to BlackJack!!</h1>
+    <div class="game-space">
+        <div class="player">
+            <div class="player-space">
+                <div class="player-content">
+                    <h2>Your Cards:</h2>
+                </div>
+                <div class="player_hand_points">
+                    <h2 id="player_hand"></h2>
+                </div>
+
+                <div class="player-points">
+                    <p>Your Points:</p>
+                    <h2 id="player_hand_value"></h2>
+                </div>
+            </div>
+            <div class="player_card">
+
+            </div>
+        </div>
+
+        <div class="table">
+            <div class="table-content">
+                <h2>Table Cards:</h2>
+            </div>
+            <div class="table_hand_points">
+                <h2 id="table_hand"></h2>
+            </div>
+
+            <div class="table-points">
+                <p>Table Points:</p>
+                <h2 id="table_hand_value"></h2>
+            </div>
+        </div>
+
+    </div>
+    <div class="btns">
+        <button onclick="startGame()">Start Game</button>
+        <button onclick="hitCard()">Hit card</button>
+        <button onclick="stand()">Stand</button>
+        <button onclick="resetGame()">Reset</button>
+
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
