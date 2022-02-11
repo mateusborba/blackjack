@@ -6,6 +6,9 @@ var tableHand = 0;
 var cartaAleatoria;
 var valor;
 
+let button = document.querySelector(".btns");
+button.disabled = true;
+
 //Cria o baralho 
 
 function createDraw(baralho) {
@@ -41,7 +44,7 @@ function hitCard() {
         setTimeout(() => {
             Swal.fire({
                 icon: 'error',
-                title: 'You Lose :(((',
+                title: 'Se fudeu :(((',
                 text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
             })
             return resetGame();
@@ -84,7 +87,7 @@ function stand() {
         setTimeout(() => {
             Swal.fire({
                 icon: 'success',
-                title: 'You Win!!!!!!!',
+                title: 'Boa crl :DDDDDDDDDD',
                 text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
             })
             return resetGame();
@@ -94,7 +97,7 @@ function stand() {
         setTimeout(() => {
             Swal.fire({
                 icon: 'error',
-                title: 'You Lose :(((',
+                title: 'Se fudeu :(((',
                 text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
             })
             return resetGame();
@@ -104,7 +107,7 @@ function stand() {
         setTimeout(() => {
             Swal.fire({
                 icon: 'success',
-                title: 'You Win!!!!!!!',
+                title: 'Boa crl :DDDDDDDDDD',
                 text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
             })
             return resetGame();
