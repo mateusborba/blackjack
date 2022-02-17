@@ -10,6 +10,16 @@ function createDraw(baralho) {
     var cartaAleatoria = Math.floor(baralho.length * Math.random());
     return baralho[cartaAleatoria];
 }
+
+//Faz a soma das cartas que o usuário possui 
+function getHandValue(hand) {
+    var sum = 0;
+    for (var i = 0; i < hand.length; i++) {
+        sum += hand[i];
+    }
+    return sum;
+}
+
 //Critério 1 - Começar jogo com uma carta
 function startGame() {
 
@@ -22,6 +32,7 @@ function startGame() {
     document.getElementById("table_hand_value").innerHTML = getHandValue(tableHand);
 
 }
+
 //envia mais uma carta aleatória para o usuário
 function hitCard() {
     playerHand.push(createDraw(baralho));
@@ -53,14 +64,7 @@ function hitCard() {
         }, 800);
     }
 }
-//Faz a soma das cartas que o usuário possui 
-function getHandValue(hand) {
-    var sum = 0;
-    for (var i = 0; i < hand.length; i++) {
-        sum += hand[i];
-    }
-    return sum;
-}
+
 //valida qual o valor maior entre as mãos, define o ganhador e a regra para a mesa receber cartas
 function stand() {
     var verificaValor = Math.max([getHandValue(playerHand)], getHandValue(tableHand));
@@ -105,6 +109,7 @@ function stand() {
 
     return verificaValor;
 }
+
 // Reseta o game para o estado inicial 
 
 function resetGame() {
@@ -117,6 +122,3 @@ function resetGame() {
     document.getElementById("table_hand").innerHTML = tableHand;
     document.getElementById("table_hand_value").innerHTML = tableHand;
 }
-
-
-

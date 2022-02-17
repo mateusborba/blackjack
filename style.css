@@ -58,12 +58,12 @@ h1 {
     margin-bottom: 5px;
 }
 
-.player-points p {
+.player-points h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    vertical-align: middle;
-    margin-top: 55px;
+    margin-top: 50px;
+    font-size: 40px;
 }
 
 .player_hand_points {
@@ -78,6 +78,11 @@ h1 {
 .table-content{
     color: black;
     margin-top: 20px;
+}
+
+.table-content .player-content h2 {
+    font-size: 25px;
+    margin-top: 50px;
 }
 
 .table-points {
@@ -102,6 +107,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    font-size: 40px;
 }
 
 
