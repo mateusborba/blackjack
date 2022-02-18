@@ -1,16 +1,39 @@
+const naipes = ['Ouros', 'Paus', 'Espadas', 'Copas'];
+const cartas = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+var cartasEspeciais = {
+    A: 11,
+    J: 10,
+    Q: 10,
+    K: 10
+};
+
+var baralho = [];
+
+function criarBaralho() {
+    baralho = new Array();
+    naipes.forEach(naipe => {
+        cartas.forEach(carta => {
+            baralho.push({ valor: carta, naipe });
+        })
+    })
+    console.log(baralho);
+}
+criarBaralho();
+
 //váriaveis usadas no código
-var baralho = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11];
-var playerHand;
-var tableHand;
+var tableHand = [];
 var cartaAleatoria;
 var valor;
+var valorCarta;
 
 //Cria o sorteio da carta
 function createDraw(baralho) {
     var cartaAleatoria = Math.floor(baralho.length * Math.random());
-    return baralho[cartaAleatoria];
-}
+    console.log(baralho);
+    let valorCarta = baralho[cartaAleatoria].valor == "J" || baralho[cartaAleatoria].valor == "Q" || baralho[cartaAleatoria].valor == "K" ? 10 : baralho[cartaAleatoria].valor == "A" ? 11 : baralho[cartaAleatoria].valor;
+    return valorCarta;
 
+}
 
 
 //Faz a soma das cartas que o usuário possui 
@@ -67,6 +90,9 @@ function getHandValue(hand) {
 //Critério 1 - Começar jogo com uma carta
 function startGame() {
 
+
+
+
     playerHand = [createDraw(baralho)];
     tableHand = [createDraw(baralho)];
 
@@ -79,6 +105,13 @@ function startGame() {
 
 //envia mais uma carta aleatória para o usuário
 function hitCard() {
+    if (!playerHand.length /* playerHand.length == 0*/ && !tableHand.length) {
+        return Swal.fire({
+            icon: 'error',
+            title: 'COMEÇA O JOGOOOOO'
+        })
+    }
+
     playerHand.push(createDraw(baralho));
 
     document.getElementById("player_hand").innerHTML = playerHand;
@@ -86,6 +119,8 @@ function hitCard() {
 
     document.getElementById("table_hand").innerHTML = tableHand;
     document.getElementById("table_hand_value").innerHTML = getHandValue(tableHand);
+
+
 
     if (getHandValue(playerHand) > 21) {
         setTimeout(() => {
@@ -175,6 +210,8 @@ function resetGame() {
     document.getElementById("player_hand_value").innerHTML = playerHand;
     document.getElementById("table_hand").innerHTML = tableHand;
     document.getElementById("table_hand_value").innerHTML = tableHand;
+
+    return resetGame();
 }
 
 function disableButton() {
