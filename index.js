@@ -29,12 +29,10 @@ var valorCarta;
 //Cria o sorteio da carta
 function createDraw(baralho) {
     var cartaAleatoria = Math.floor(baralho.length * Math.random());
-    console.log(baralho);
     let valorCarta = baralho[cartaAleatoria].valor == "J" || baralho[cartaAleatoria].valor == "Q" || baralho[cartaAleatoria].valor == "K" ? 10 : baralho[cartaAleatoria].valor == "A" ? 11 : baralho[cartaAleatoria].valor;
     return valorCarta;
 
 }
-
 
 //Faz a soma das cartas que o usuário possui 
 function getHandValue(hand) {
