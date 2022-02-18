@@ -1,3 +1,4 @@
+//váriaveis usadas no código
 const naipes = ['Ouros', 'Paus', 'Espadas', 'Copas'];
 const cartas = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
 var cartasEspeciais = {
@@ -6,8 +7,11 @@ var cartasEspeciais = {
     Q: 10,
     K: 10
 };
-
 var baralho = [];
+var tableHand = [];
+var cartaAleatoria;
+var valor;
+var valorCarta;
 
 function criarBaralho() {
     baralho = new Array();
@@ -16,15 +20,9 @@ function criarBaralho() {
             baralho.push({ valor: carta, naipe });
         })
     })
-    console.log(baralho);
 }
 criarBaralho();
 
-//váriaveis usadas no código
-var tableHand = [];
-var cartaAleatoria;
-var valor;
-var valorCarta;
 
 //Cria o sorteio da carta
 function createDraw(baralho) {
@@ -44,7 +42,6 @@ function getHandValue(hand) {
     ]
     */
     var sum = 0;
-
     /*
     primera vez que chega aqui:
     sum = 0
@@ -77,8 +74,6 @@ function getHandValue(hand) {
     i < hand.length => 3 < 3 = false
     logo, ele sai do for
     */
-
-
     for (var i = 0; i < hand.length; i++) {
         sum += hand[i];
     }
@@ -87,9 +82,6 @@ function getHandValue(hand) {
 
 //Critério 1 - Começar jogo com uma carta
 function startGame() {
-
-
-
 
     playerHand = [createDraw(baralho)];
     tableHand = [createDraw(baralho)];
@@ -103,13 +95,13 @@ function startGame() {
 
 //envia mais uma carta aleatória para o usuário
 function hitCard() {
+
     if (!playerHand.length /* playerHand.length == 0*/ && !tableHand.length) {
         return Swal.fire({
-            icon: 'error',
+            icon: 'warning',
             title: 'COMEÇA O JOGOOOOO'
         })
     }
-
     playerHand.push(createDraw(baralho));
 
     document.getElementById("player_hand").innerHTML = playerHand;
@@ -117,8 +109,6 @@ function hitCard() {
 
     document.getElementById("table_hand").innerHTML = tableHand;
     document.getElementById("table_hand_value").innerHTML = getHandValue(tableHand);
-
-
 
     if (getHandValue(playerHand) > 21) {
         setTimeout(() => {
@@ -144,6 +134,14 @@ function hitCard() {
 
 //valida qual o valor maior entre as mãos, define o ganhador e a regra para a mesa receber cartas
 function stand() {
+
+    if (!playerHand.length /* playerHand.length == 0*/ && !tableHand.length) {
+        return Swal.fire({
+            icon: 'warning',
+            title: 'COMEÇA O JOGOOOOO'
+        })
+    }
+
     var verificaValor = Math.max([getHandValue(playerHand)], getHandValue(tableHand));
 
     if (getHandValue(tableHand) <= getHandValue(playerHand) && getHandValue(tableHand) < 21) {
@@ -193,14 +191,12 @@ function stand() {
     }
     document.getElementById("table_hand").innerHTML = tableHand;
     document.getElementById("table_hand_value").innerHTML = getHandValue(tableHand);
-
     return verificaValor;
 }
 
 // Reseta o game para o estado inicial 
 
 function resetGame() {
-
     playerHand = [];
     tableHand = [];
 
@@ -212,10 +208,11 @@ function resetGame() {
     return resetGame();
 }
 
-function disableButton() {
+/* function disableButton() {
     document.getElementById("btn-start").disabled = false;
     document.getElementById("btn-hit").disabled = true;
     document.getElementById("btn-stand").disabled = true;
     document.getElementById("btn-reset").disabled = true;
     return disableButton();
 }
+ */
