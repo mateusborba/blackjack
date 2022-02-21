@@ -20,9 +20,9 @@ function criarBaralho() {
             baralho.push({ valor: carta, naipe });
         })
     })
+    console.log(baralho)
 }
 criarBaralho();
-
 
 //Cria o sorteio da carta
 function createDraw(baralho) {
@@ -179,20 +179,11 @@ function stand() {
             return resetGame();
         }, 800);
     }
-    else if (getHandValue(table == getHandValue(playerHand))) {
-        setTimeout(() => {
-            Swal.fire({
-                icon: 'alert',
-                title: 'The table tied with you',
-                text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
-            })
-            return resetGame();
-        }, 800);
-    }
     document.getElementById("table_hand").innerHTML = tableHand;
     document.getElementById("table_hand_value").innerHTML = getHandValue(tableHand);
     return verificaValor;
 }
+
 
 // Reseta o game para o estado inicial 
 
@@ -207,12 +198,3 @@ function resetGame() {
 
     return resetGame();
 }
-
-/* function disableButton() {
-    document.getElementById("btn-start").disabled = false;
-    document.getElementById("btn-hit").disabled = true;
-    document.getElementById("btn-stand").disabled = true;
-    document.getElementById("btn-reset").disabled = true;
-    return disableButton();
-}
- */
