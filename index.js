@@ -118,7 +118,7 @@ function hitCard() {
                 text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
             })
             return resetGame();
-        }, 800);
+        }, 600);
     } else if (getHandValue(playerHand) == 21) {
         setTimeout(() => {
 
@@ -128,7 +128,7 @@ function hitCard() {
                 text: 'You scored ' + getHandValue(playerHand) + ' and ' + 'Table scored ' + getHandValue(tableHand),
             })
             return resetGame();
-        }, 800);
+        }, 600);
     }
 }
 

@@ -169,4 +169,94 @@ h2 {
     cursor: pointer;
 }
 
+@media screen and (max-width: 480px){
+    .game-space {
+        width: 450px;
+        height:450px;
+    }
 
+    .btns {
+        width: 450px;
+        margin-top: -50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-left: 18px
+    }
+
+    #btn-start {
+        font-size: 15px;
+    }
+    
+    #btn-hit {
+        font-size: 15px;
+    }
+    
+    #btn-stand {
+        font-size: 15px;
+    }
+    
+    #btn-reset {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 695px) {
+    
+    h2 {
+        font-size: 18px;
+    }
+
+    .game-space {
+        width: 550px;
+        height:450px;
+    }
+
+    .table-points {
+        height:120px;
+        width: 110px
+    }
+
+    .table-points h2{
+        font-size:30px;
+        margin-top: 35px
+    }
+
+    .player-points {
+        height:120px;
+        margin-bottom: 35px;
+        width: 110px
+    }
+
+    .player-points h2 {
+        font-size:30px;
+        margin-top: 35px;
+    }
+
+    .btns {
+            width: 550px;
+            margin-top: -50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #btn-start {
+            font-size: 15px;
+        }
+        
+        #btn-hit {
+            font-size: 15px;
+        }
+        
+        #btn-stand {
+            font-size: 15px;
+        }
+        
+        #btn-reset {
+            font-size: 15px;
+        }
+}
