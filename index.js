@@ -13,16 +13,25 @@ var cartaAleatoria;
 var valor;
 var valorCarta;
 
+
 function criarBaralho() {
     baralho = new Array();
     naipes.forEach(naipe => {
         cartas.forEach(carta => {
             baralho.push({ valor: carta, naipe });
         })
+        if (!playerHand.length /* playerHand.length == 0*/ && !tableHand.length) {
+            return Swal.fire({
+                icon: 'warning',
+                title: 'You need start the game to play',
+                showConfirmationButton: true
+            })
+        }
     })
-    console.log(baralho)
 }
+
 criarBaralho();
+
 
 //Cria o sorteio da carta
 function createDraw(baralho) {
@@ -99,7 +108,8 @@ function hitCard() {
     if (!playerHand.length /* playerHand.length == 0*/ && !tableHand.length) {
         return Swal.fire({
             icon: 'warning',
-            title: 'COMEÇA O JOGOOOOO'
+            title: 'You need start the game to play',
+            showConfirmationButton: true
         })
     }
     playerHand.push(createDraw(baralho));
@@ -138,7 +148,7 @@ function stand() {
     if (!playerHand.length /* playerHand.length == 0*/ && !tableHand.length) {
         return Swal.fire({
             icon: 'warning',
-            title: 'COMEÇA O JOGOOOOO'
+            title: 'You need start the game to play'
         })
     }
 
